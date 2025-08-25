@@ -9,8 +9,8 @@ const ToggleSwitch: FC<ToggleSwitchProps> = ({ checked, onChange, className }) =
       } ${className}`}
     >
       <span
-        className={`inline-block h-4 w-4 transform rounded-full  transition-transform ${
-          checked ? 'translate-x-6 shadow-inner bg-neutral-200' : 'translate-x-1 bg-neutral-100 shadow-md'
+        className={`inline-block h-4 w-4 transform rounded-full transition-transform ${
+          checked ? 'translate-x-6 bg-neutral-200 shadow-inner' : 'translate-x-1 bg-neutral-100 shadow-md'
         }`}
       />
     </button>
