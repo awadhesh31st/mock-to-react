@@ -47,7 +47,7 @@ const CardItemSetting: FC<CardItemSettingProps> = memo((props) => {
           </div>
         )}
         {cardIndex === 2 && (
-          <div className="relative flex w-full flex-shrink-0 items-center md:justify-end md:w-4/12 md:h-full">
+          <div className="relative flex w-full flex-shrink-0 items-center md:h-full md:w-4/12 md:justify-end">
             <ToggleSwitch checked={props.keepPrivate} onChange={props.setKeepPrivate} />
           </div>
         )}
