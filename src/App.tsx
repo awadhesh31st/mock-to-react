@@ -1,5 +1,11 @@
+import EmailManagementPage from './pages/emailManagement'
+
 const App = () => {
-  return <div>App</div>
+  return (
+    <>
+      <EmailManagementPage />
+    </>
+  )
 }
 
-export default App;
+export default App

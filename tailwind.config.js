@@ -4,11 +4,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-
+        greenPrimary: '#43a100',
+        greenLight: '#e8fdc6',
+        greenMid: '#abd770',
+        orangePrimary: '#fd3900',
+        orangeLight: '#ffecd2',
+        orangeMid: '#ffaa79',
+        neutralDark: '#2d2218',
+        neutralLight: '#f5f5f4',
+        neutralMid: '#b2b0ac',
+        grayMid: '#838281',
+        grayLight: '#e7e5e4',
       },
-      boxShadow: {
-
-      },
+      boxShadow: {},
     },
   },
   plugins: [],
