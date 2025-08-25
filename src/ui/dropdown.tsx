@@ -7,7 +7,7 @@ const Dropdown: FC<DropdownProps> = (props) => {
     <>
       <div className="fixed inset-0 z-10" onClick={props.onClose} />
       <div
-        className={`absolute z-20 w-40 rounded-lg border border-gray-300 bg-white px-1 shadow-lg ${props.className}`}
+        className={`absolute right-0 top-7 z-20 rounded-lg border border-gray-300 bg-white px-1 py-1 shadow-lg ${props.className}`}
       >
         {props.children}
       </div>

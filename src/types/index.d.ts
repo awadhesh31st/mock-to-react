@@ -5,6 +5,8 @@ type IconProps = {
   previous: IconType
   threeDotMore: IconType
   switch: IconType
+  down: IconType
+  check: IconType
 }
 
 type BadgeProps = {
@@ -51,7 +53,19 @@ type CardItemProps = {
   onRemove: (id: number) => void
   cardIndex: number
   isLast: boolean
-  cardType: 'email' | 'setting'
+}
+
+type CardItemSettingProps = {
+  setting: Email
+  primaryEmail: string
+  setPrimaryEmail: (email: string) => void
+  backupEmail: string
+  setBackupEmail: (email: string) => void
+  keepPrivate: boolean
+  setKeepPrivate: (keep: boolean) => void
+  availableEmails: string[]
+  cardIndex: number
+  isLast: boolean
 }
 
 type HeaderProps = {
@@ -63,4 +77,12 @@ type ActionMenuProps = {
   onClose: () => void
   onManage: () => void
   onRemove: () => void
+}
+
+type SelectDropdownProps = {
+  value: string | null
+  options: { label: string; value: string }[]
+  onChange: (value: string) => void
+  placeholder?: string
+  className?: string
 }

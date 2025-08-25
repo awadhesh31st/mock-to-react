@@ -1,10 +1,10 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import Dropdown from './dropdown'
 import { icon } from '../lib'
 
-const ActionMenu: FC<ActionMenuProps> = ({ isOpen, onClose, onManage, onRemove }) => {
+const ActionMenu: FC<ActionMenuProps> = memo(({ isOpen, onClose, onManage, onRemove }) => {
   return (
-    <Dropdown isOpen={isOpen} onClose={onClose} className="right-0 top-7 w-32 py-1">
+    <Dropdown isOpen={isOpen} onClose={onClose} className="right-0 top-7 w-40 py-1">
       <button
         onClick={onManage}
         className="flex w-full items-center gap-2 rounded-lg px-2 py-1 text-left text-sm text-gray-700 hover:bg-gray-100"
@@ -21,6 +21,6 @@ const ActionMenu: FC<ActionMenuProps> = ({ isOpen, onClose, onManage, onRemove }
       </button>
     </Dropdown>
   )
-}
+})
 
 export default ActionMenu

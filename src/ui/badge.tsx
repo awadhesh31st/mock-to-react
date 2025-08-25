@@ -1,6 +1,6 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 
-const Badge: FC<BadgeProps> = (props) => {
+const Badge: FC<BadgeProps> = memo((props) => {
   const getBadgeClass = (badgeType: BadgeType) => {
     switch (badgeType) {
       case 'PRIMARY':
@@ -19,6 +19,6 @@ const Badge: FC<BadgeProps> = (props) => {
       {props.children}
     </span>
   )
-}
+})
 
 export default Badge
