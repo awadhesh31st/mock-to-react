@@ -1,13 +1,19 @@
 import { FC, memo } from 'react'
 import SelectDropdown from '../ui/selectDropdown'
+import ToggleSwitch from '../ui/toggleSwitch'
 
 const CardItemSetting: FC<CardItemSettingProps> = memo((props) => {
-  const { setPrimaryEmail, setting, isLast, cardIndex } = props
+  const { setPrimaryEmail, setting, isLast, cardIndex, availableEmails, primaryEmail } = props
 
-  const primaryOptions = props.availableEmails.map((email: string) => ({
+  const primaryOptions = availableEmails.map((email: string) => ({
     value: email,
     label: email,
   }))
+
+  const backupOptions = [
+    { value: 'Allow all verified emails', label: 'Allow all verified emails' },
+    ...availableEmails.filter((email) => email !== primaryEmail).map((email) => ({ value: email, label: email })),
+  ]
 
   return (
     <div className={`flex ${!isLast ? 'border-b border-gray-200 pb-3' : 'pb-0'}`}>
@@ -20,14 +26,31 @@ const CardItemSetting: FC<CardItemSettingProps> = memo((props) => {
           </div>
           {setting.description && <p className="text-sm text-zinc-500">{setting.description}</p>}
         </div>
-        <div className="relative w-full flex-shrink-0 md:w-4/12">
-          <SelectDropdown
-            value={props.primaryEmail}
-            options={primaryOptions}
-            onChange={setPrimaryEmail}
-            className="max-w-sm"
-          />
-        </div>
+        {cardIndex === 0 && (
+          <div className="relative w-full flex-shrink-0 md:w-4/12">
+            <SelectDropdown
+              value={props.primaryEmail}
+              options={primaryOptions}
+              onChange={setPrimaryEmail}
+              className="max-w-sm"
+            />
+          </div>
+        )}
+        {cardIndex === 1 && (
+          <div className="relative w-full flex-shrink-0 md:w-4/12">
+            <SelectDropdown
+              value={props.backupEmail}
+              options={backupOptions}
+              onChange={props.setBackupEmail}
+              className="max-w-sm"
+            />
+          </div>
+        )}
+        {cardIndex === 2 && (
+          <div className="relative flex w-full flex-shrink-0 items-center md:justify-end md:w-4/12 md:h-full">
+            <ToggleSwitch checked={props.keepPrivate} onChange={props.setKeepPrivate} />
+          </div>
+        )}
       </div>
     </div>
   )

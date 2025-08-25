@@ -86,3 +86,9 @@ type SelectDropdownProps = {
   placeholder?: string
   className?: string
 }
+
+type ToggleSwitchProps = {
+  checked: boolean
+  onChange: (checked: boolean) => void
+  className?: string
+}
