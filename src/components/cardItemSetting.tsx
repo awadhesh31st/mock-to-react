@@ -18,7 +18,7 @@ const CardItemSetting: FC<CardItemSettingProps> = memo((props) => {
   return (
     <div className={`flex ${!isLast ? 'border-b border-gray-200 pb-3' : 'pb-0'}`}>
       <div
-        className={`flex w-full flex-col items-start justify-between gap-1 md:flex-row ${cardIndex === 0 ? '' : 'pt-3'}`}
+        className={`flex w-full flex-col items-start justify-between md:flex-row md:gap-0 gap-4 ${cardIndex === 0 ? '' : 'pt-3'}`}
       >
         <div className="w-full min-w-0 flex-1 flex-col gap-1.5 md:w-8/12">
           <div className="mb-2 flex flex-wrap items-center gap-2">
