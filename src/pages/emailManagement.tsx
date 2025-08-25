@@ -35,12 +35,13 @@ const EmailManagementPage = () => {
           {emails.map((email: Email, key: number) => {
             return (
               <CardItem
-                key={key}
+                key={email.id}
                 email={email}
                 showActions={showActionDropdown}
                 onActionClick={handleActionClick}
                 onManage={handleManage}
                 onRemove={handleRemove}
+                cardIndex={key}
                 isLast={emails.length - 1 === key}
                 cardType="email"
               />
@@ -51,12 +52,13 @@ const EmailManagementPage = () => {
           {emailSetting.map((email: Email, key: number) => {
             return (
               <CardItem
-                key={key}
+                key={email.id}
                 email={email}
                 showActions={showActionDropdown}
                 onActionClick={handleActionClick}
                 onManage={handleManage}
                 onRemove={handleRemove}
+                cardIndex={key}
                 isLast={emails.length - 1 === key}
                 cardType="setting"
               />

@@ -7,7 +7,7 @@ const EmailLayout: FC<EmailLayoutProps> = ({ title, description, children }) => 
         <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
         <p className="text-sm text-gray-500">{description}</p>
       </div>
-      <div className="rounded-2xl border border-gray-200 bg-white p-6 drop-shadow-sm">{children}</div>
+      <div className="m-4 rounded-2xl border-[0.5px] border-gray-200 bg-zinc-50 p-6 shadow-bottom md:mx-0">{children}</div>
     </div>
   )
 }

@@ -49,6 +49,7 @@ type CardItemProps = {
   onActionClick: (id: number | null) => void
   onManage: (id: number) => void
   onRemove: (id: number) => void
+  cardIndex: number
   isLast: boolean
   cardType: 'email' | 'setting'
 }
